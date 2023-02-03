@@ -22,7 +22,8 @@
   /* others */
   --indent: 24px;
   --items: 3;
-  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --bor-rad: 4px;
+  --transition-dur-and-funk: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -57,7 +58,7 @@ img {
 button {
   display: block;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--bor-rad);
   cursor: pointer;
 }
 /* ---------------------reset end------------------ */
@@ -134,7 +135,7 @@ button {
   padding-bottom: 24px;
   color: var(--dark);
   font-weight: 500;
-  transition: color var(--transition);
+  transition: color var(--transition-dur-and-funk);
 }
 
 .current {
@@ -146,7 +147,7 @@ button {
   padding-top: 24px;
   padding-bottom: 24px;
   color: var(--text);
-  transition: color var(--transition);
+  transition: color var(--transition-dur-and-funk);
 }
 
 .nav-list-link:hover,
@@ -216,7 +217,7 @@ button {
   font-family: inherit;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  transition: background-color var(--transition);
+  transition: background-color var(--transition-dur-and-funk);
 }
 
 .pointer {
@@ -242,7 +243,7 @@ button {
 .advantages-inner {
   margin-bottom: 8px;
   padding: 24px 100px;
-  border-radius: 4px;
+  border-radius: var(--bor-rad);
   background-color: var(--light);
 }
 
@@ -319,7 +320,7 @@ button {
   height: 40px;
   border-radius: 50%;
   background-color: var(--primary-brand);
-  transition: var(--transition);
+  transition: var(--transition-dur-and-funk);
 }
 
 .soc-link:hover,
@@ -351,9 +352,9 @@ button {
   width: 168px;
   height: 88px;
   border: 1px solid currentColor;
-  border-radius: 4px;
+  border-radius: var(--bor-rad);
   color: var(--subtitle-text);
-  transition: color var(--transition);
+  transition: color var(--transition-dur-and-funk);
 }
 
 .customers-icon {
@@ -385,8 +386,8 @@ button {
   font-family: inherit;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  transition: background-color var(--transition), color var(--transition),
-    box-shadow var(--transition);
+  transition: background-color var(--transition-dur-and-funk), color var(--transition-dur-and-funk),
+    box-shadow var(--transition-dur-and-funk);
 }
 
 .filter-btn:hover,
@@ -415,7 +416,7 @@ button {
   display: block;
   color: inherit;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
-  transition: box-shadow var(--transition);
+  transition: box-shadow var(--transition-dur-and-funk);
 }
 
 .examples-item:hover .overlay,
@@ -438,7 +439,7 @@ button {
   background-color: var(--primary-brand);
   color: var(--light);
   line-height: 1.5;
-  transition: transform var(--transition);
+  transition: transform var(--transition-dur-and-funk);
   transform: translate(0, 100%);
 }
 
@@ -522,7 +523,7 @@ button {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: background-color var(--transition);
+  transition: background-color var(--transition-dur-and-funk);
 }
 
 .footer-soc-link:hover,
@@ -532,4 +533,43 @@ button {
 
 .footer-soc-icon {
   fill: var(--light);
+}
+
+/* -----------------------modal--------------------- */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 408px;
+  height: 576px;
+  border-radius: var(--bor-rad);
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--accent);
 }
